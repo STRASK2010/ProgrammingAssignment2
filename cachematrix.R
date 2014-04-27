@@ -1,9 +1,9 @@
 project_path = file.path(Sys.getenv('HOME'), 'R Programming/ProgrammingAssignment2')
 setwd(project_path)
 
-##makeCacheMatrix will make a matrix and cache it for the cachesolve function to calculate ito inverse
+##This function creates a special "matrix" object that can cache its inverse
 
-## Creates the matrix
+## makeCacheMatrix creates the matrix and inverse, storing in cache
 
 makeCacheMatrix <- function(x = matrix()) {
         i <- NULL
@@ -12,7 +12,7 @@ makeCacheMatrix <- function(x = matrix()) {
                 i <<- NULL
         }
         get <- function() x ## Function 2
-        setInverse <- function(solve) i <<- solve  ## Function 3
+        setInverse <- function(solve) i <<- solve  ## Function 3 Inversion
         getInverse <- function() i         ## Function 4
         list(set = set, get = get,
              setInverse = setInverse,
